@@ -5,14 +5,14 @@ class Date;
 class Movie
 {
 private:
-    string tittle;
+    string title;
     string director;
     string releaseDate;
     string genre;
 public:
 
     Movie(string t, string d,Date date, string g){
-        tittle = t;
+        title = t;
         director = d;
         releaseDate = date.date_to_string();
         genre = g;
@@ -20,7 +20,7 @@ public:
     };
 
     string info(){
-        return tittle, director, releaseDate, genre;
+        return title, director, releaseDate, genre;
     };
 
 };

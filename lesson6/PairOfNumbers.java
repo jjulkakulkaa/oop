@@ -21,7 +21,7 @@ public class PairOfNumbers{
     };
 
     public static float average(){
-        return (a + b)/2 ;
+        return (float)(a + b)/2 ;
     };
 
     public PairOfNumbers(int a, int b){
@@ -31,6 +31,7 @@ public class PairOfNumbers{
     }
     public static void main(String[] args ){
         PairOfNumbers pair = new PairOfNumbers(2,5);
+        System.out.println(pair.average());
         
     }
 }

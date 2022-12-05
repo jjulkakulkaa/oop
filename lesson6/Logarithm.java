@@ -10,7 +10,7 @@ public class Logarithm implements Number {
     public Logarithm(double inputBase, double inputArgument) {
       if (inputBase < 0 || inputBase == 1){
         throw new IllegalArgumentException(
-            String.format("Liczba mniejsza od 1 nie moze byc podstawa logarytmutmu")
+            String.format("Liczba mniejsza od 1 nie moze byc podstawa logarytmu")
         );
       }
       if (argument < 0){

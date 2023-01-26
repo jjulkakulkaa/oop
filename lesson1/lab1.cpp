@@ -2,35 +2,55 @@
 using namespace std;
 
 class Human{
-    public:
     string name;
     int age;
+    public:
+    Human(string name, int age){
+        this->name = name;
+        this->age = age;
+    }
     string give_a_snack(string food){
+        cout << "here is your " + food +"\n";
         return food;
     };
 };
 
 class Cat{
-    public:
     string name;
     string colour;
     int age;
     string fav_food;
+    public:
+    Cat(string name, string colour, int age, string fav_food){
+        this->name = name;
+        this->colour = colour;
+        this->age = age;
+        this->fav_food = fav_food;
+    }
     void ask_about_snack(){
-        cout << "meow";
+        cout << "meow\n";
     };
+    void consume_snack(string snack){
+        if(snack == "tuna"){
+            cout << "meow meow\n";
+        }
+        else{
+            cout << "meow";
+        }
+    }
 };
 
 
 int main(){
-    Cat cat;
-    cat.name="Sushi";
-    cat.colour="black";
-    cat.age=2;
-    cat.fav_food="tuna";
+    Cat cat("Sushi", "Black", 2, "tuna");
+    Human me("Julka", 20);
+    
+    cat.ask_about_snack();
+    cat.consume_snack(me.give_a_snack("tuna"));
 
-    Human me;
-    me.name = "Julka";
-    me.age = 20;
+    cat.ask_about_snack();
+    cat.consume_snack(me.give_a_snack("chicken"));
 
+
+    
 }

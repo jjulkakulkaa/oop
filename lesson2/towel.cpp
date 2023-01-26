@@ -2,19 +2,19 @@
 using namespace std;
 
 class Towel{
-    public:
-
     string colour;
     string material;
-    int width;
+    string size;
     bool is_dirty;
-    
-    Towel(string c = "white", string m = "wool",int  w = 100 ,bool dirty = false ){
-        colour = c;
-        material = m;
-        width = w;
-        is_dirty = dirty;
+
+    public:
+    Towel(string colour = "", string material = "",string size = "0x0" ,bool dirty = false ){
+        this->colour = colour;
+        this->material = material;
+        this->size = size;
+        this->is_dirty = is_dirty;
     }
+
     void wash(){
         if(is_dirty = true){
             this->is_dirty = false;
@@ -25,12 +25,33 @@ class Towel{
             this->is_dirty = true;
         }
     }
-    void repaint(int c){
-        this->colour = c;
+    void repaint(string colour){
+        this->colour = colour;
     }
-
+    void info(){
+        
+        cout << "Colour: " + this->colour + "\n Material "+ this->material + "\nSize: " + this->size + "\n";
+        if(this->is_dirty){
+            cout << "This towel is not dirty\n";
+        }
+        else{
+            cout << "This towel is dirty\n";
+        }
+    }
 };
 
 int main(){
+    Towel towel("white", "wool", "100x50", true);
+    towel.info();
+    towel.wash();
+    towel.info();
+
+    Towel towel2("black", "wool");
+    towel2.info();
+    towel2.repaint("pink");
+    towel2.use();
+    towel2.info();
+    
 
 }
+
